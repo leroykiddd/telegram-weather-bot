@@ -10,19 +10,34 @@ import java.io.IOException;
 public class Parser  {
 
     private String city;
+    private String url;
+    private  Document doc;
 
-    Parser(String city){
+    Parser(String city) throws IOException {
         this.city = city;
+        url = "https://yandex.ru/pogoda/" + this.city.toLowerCase();
+        doc = Jsoup.connect(url).get();
     }
 
-    public String getTodayTemperature() throws IOException{
+    public String getNowTemperature() throws IOException{
 
-        String temperature = "Температура сегодня: ";
-        String url = "https://yandex.ru/pogoda/" + city.toLowerCase();
-        Document doc = Jsoup.connect(url).get();
+        String temperature = "Сейчас в этом городе: ";
         Elements temp = doc.getElementsByAttributeValue("class", "temp fact__temp fact__temp_size_s");
         temperature += temp.select("span").first().text();
 
         return temperature;
+    }
+
+    public String getNowFactWeather() throws IOException{
+        String fact;
+
+        Elements el = doc.getElementsByAttributeValue("class", "maps-widget-fact__title");
+        fact = el.text();
+
+        if (fact.equals("Погода сейчас и прогноз — на картах")){
+            fact += "\n" + url;
+        }
+
+        return fact;
     }
 }

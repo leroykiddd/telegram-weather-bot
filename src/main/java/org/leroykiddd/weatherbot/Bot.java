@@ -13,9 +13,14 @@ public class Bot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String msg = "Что-то пошло не так";
-            Parser p = new Parser(update.getMessage().getText());
+            Parser p = null;
             try {
-                msg = p.getTodayTemperature();
+                p = new Parser(update.getMessage().getText());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                msg = p.getNowTemperature() + "\n" + p.getNowFactWeather();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -31,10 +36,10 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return "name";
+        return "leroy_kid_javalearnbot";
     }
 
     public String getBotToken() {
-        return "token";
+        return "934478099:AAEwNs3eYIsbv9FgS5lBjfc5DH-hPFyj9Kc";
     }
 }
