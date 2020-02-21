@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="673aa6f1-d763-4151-bf8c-930717b75e86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/leroykiddd/weatherbot/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/leroykiddd/weatherbot/Bot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/leroykiddd/weatherbot/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/leroykiddd/weatherbot/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/leroykiddd/weatherbot/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/leroykiddd/weatherbot/Bot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/leroykiddd/weatherbot/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/leroykiddd/weatherbot/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/weather-bot.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -74,26 +78,34 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1258" height="82" key="GridCell.Tab.0.bottom" timestamp="1582219705236">
+    <state width="1258" height="103" key="GridCell.Tab.0.bottom" timestamp="1582311027383">
       <screen x="62" y="27" width="1304" height="741" />
     </state>
-    <state width="1258" height="82" key="GridCell.Tab.0.bottom/62.27.1304.741@62.27.1304.741" timestamp="1582219705236" />
-    <state width="1258" height="82" key="GridCell.Tab.0.center" timestamp="1582219705229">
+    <state width="1258" height="103" key="GridCell.Tab.0.bottom/62.27.1304.741@62.27.1304.741" timestamp="1582311027383" />
+    <state width="1258" height="103" key="GridCell.Tab.0.center" timestamp="1582311027382">
       <screen x="62" y="27" width="1304" height="741" />
     </state>
-    <state width="1258" height="82" key="GridCell.Tab.0.center/62.27.1304.741@62.27.1304.741" timestamp="1582219705229" />
-    <state width="1258" height="82" key="GridCell.Tab.0.left" timestamp="1582219705227">
+    <state width="1258" height="103" key="GridCell.Tab.0.center/62.27.1304.741@62.27.1304.741" timestamp="1582311027382" />
+    <state width="1258" height="103" key="GridCell.Tab.0.left" timestamp="1582311027381">
       <screen x="62" y="27" width="1304" height="741" />
     </state>
-    <state width="1258" height="82" key="GridCell.Tab.0.left/62.27.1304.741@62.27.1304.741" timestamp="1582219705227" />
-    <state width="1258" height="82" key="GridCell.Tab.0.right" timestamp="1582219705235">
+    <state width="1258" height="103" key="GridCell.Tab.0.left/62.27.1304.741@62.27.1304.741" timestamp="1582311027381" />
+    <state width="1258" height="103" key="GridCell.Tab.0.right" timestamp="1582311027383">
       <screen x="62" y="27" width="1304" height="741" />
     </state>
-    <state width="1258" height="82" key="GridCell.Tab.0.right/62.27.1304.741@62.27.1304.741" timestamp="1582219705235" />
-    <state x="370" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1582218582575">
+    <state width="1258" height="103" key="GridCell.Tab.0.right/62.27.1304.741@62.27.1304.741" timestamp="1582311027383" />
+    <state x="203" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1582221872103">
       <screen x="62" y="27" width="1304" height="741" />
     </state>
-    <state x="370" y="225" key="com.intellij.ide.util.TipDialog/62.27.1304.741@62.27.1304.741" timestamp="1582218582575" />
+    <state x="203" y="31" width="1022" height="737" key="SettingsEditor/62.27.1304.741@62.27.1304.741" timestamp="1582221872103" />
+    <state x="370" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1582306947374">
+      <screen x="62" y="27" width="1304" height="741" />
+    </state>
+    <state x="370" y="225" key="com.intellij.ide.util.TipDialog/62.27.1304.741@62.27.1304.741" timestamp="1582306947374" />
+    <state x="62" y="56" width="1294" height="690" key="new project wizard" timestamp="1582221983741">
+      <screen x="62" y="27" width="1304" height="741" />
+    </state>
+    <state x="62" y="56" width="1294" height="690" key="new project wizard/62.27.1304.741@62.27.1304.741" timestamp="1582221983741" />
     <state x="378" y="174" key="run.anything.popup" timestamp="1582219826787">
       <screen x="62" y="27" width="1304" height="741" />
     </state>

@@ -2,7 +2,6 @@ package org.leroykiddd.weatherbot;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
@@ -19,23 +18,30 @@ public class Parser  {
         doc = Jsoup.connect(url).get();
     }
 
-    public String getNowTemperature() throws IOException{
+    public String getNowTemperature() {
 
-        String temperature = "Сейчас в этом городе: ";
+        String temperature;
+        String output_text = "";
         Elements temp = doc.getElementsByAttributeValue("class", "temp fact__temp fact__temp_size_s");
-        temperature += temp.select("span").first().text();
+        try {
+            temperature = temp.select("span").first().text();
+            output_text = "Сейчас в этом городе: " + temperature;
+        } catch (NullPointerException e) {
+            output_text = "Не удалось получить сведения о температуре";
+        }
 
-        return temperature;
+        return output_text;
     }
 
-    public String getNowFactWeather() throws IOException{
+    public String getNowFactWeather() {
         String fact;
-
         Elements el = doc.getElementsByAttributeValue("class", "maps-widget-fact__title");
         fact = el.text();
 
         if (fact.equals("Погода сейчас и прогноз — на картах")){
             fact += "\n" + url;
+        } else if (fact.equals("")) {
+            fact = "Произошла ошибка: не удалось получить факт о погоде";
         }
 
         return fact;

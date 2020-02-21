@@ -11,27 +11,38 @@ public class Bot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        if (update.hasMessage() && update.getMessage().hasText()) {
-            String msg = "Что-то пошло не так";
-            Parser p = null;
-            try {
-                p = new Parser(update.getMessage().getText());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                msg = p.getNowTemperature() + "\n" + p.getNowFactWeather();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            SendMessage message = new SendMessage()
-                    .setChatId(update.getMessage().getChatId())
-                    .setText(msg);
-            try {
-                execute(message);
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
-            }
+
+        long chatId = update.getMessage().getChatId();
+        String msg_text = update.getMessage().getText(); //Input text
+        SendMessage message = new SendMessage().setChatId(chatId); //Output message
+        String msg; //Output text
+        Parser weather;
+
+        switch (msg_text){
+            case "/start":
+                message.setText("Привет! Я бот погоды, введи \"/help\", чтобы получить справку.");
+                break;
+            case "/help":
+                message.setText("Введи название города(на английском), чтобы получить сведеня о погоду.\nПример:\n\t" +
+                        "-Moscow\n\t-Сейчас в этом городе: 0\n" +
+                        "\tВ ближайшие два часа осадков не ожидается");
+                break;
+            default:
+                try {
+                    weather = new Parser(update.getMessage().getText());
+                    msg = weather.getNowTemperature() + "\n" + weather.getNowFactWeather();
+                    message.setText(msg);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    msg = "Что-то пошло не так!";
+                    message.setText(msg);
+                }
+        }
+
+        try {
+            execute(message);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
         }
     }
 
